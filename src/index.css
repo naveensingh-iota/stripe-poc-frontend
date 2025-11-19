@@ -1,0 +1,41 @@
+.verify-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8fafc;
+  padding: 20px;
+}
+
+/* Title styling */
+.verify-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+/* Big primary button */
+.verify-button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  background-color: #635bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+/* Hover effects */
+.verify-button:hover {
+  background-color: #5047ff;
+}
+
+/* Disabled state */
+.verify-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
