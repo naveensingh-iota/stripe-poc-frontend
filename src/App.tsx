@@ -9,12 +9,20 @@ export default function App() {
     try {
       const res = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/create-session`,
-        { method: "POST" }
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({}),
+        }
       );
 
       const data = await res.json();
 
-      if (data.url) {
+      if (data.url && data.session_id) {
+        // Store session_id in localStorage so we can retrieve it after redirect
+        localStorage.setItem("stripe_verification_session", data.session_id);
         window.location.href = data.url;
       } else {
         console.error("No verification URL returned from backend.");
